@@ -1,0 +1,13 @@
+#Setting cross-cutting fields
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../base
+
+namespace: my-namespace # this namespace should be available when running this file
+namePrefix: dev-
+nameSuffix: "-001"
+commonLabels:
+  app: bingo
+commonAnnotations:
+  oncallPager: 800-555-1212

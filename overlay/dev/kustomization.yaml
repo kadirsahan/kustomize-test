@@ -1,0 +1,17 @@
+#secretgenerator
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../base
+  
+replicas:
+- name: nginx-deployment
+  count: 1
+secretGenerator:
+- name: brsgnc
+  files:
+  - abc
+secretGenerator:
+- name: kdrshn
+  literals:
+  - xyz=abc123
